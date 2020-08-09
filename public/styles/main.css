@@ -1,0 +1,75 @@
+/* CSS -Cascading StyleSheet
+            ou
+        Folha de estilo em cascata */
+
+/* O seletor root se refere a página inteira */
+:root{
+    /* Os "--" se referem a criação de variáveis em CSS, que podem ser usadas com var(nome_variavel)*/
+
+    --color-background: #F0F0F7;
+    --color-primary-lighter: #9871F5;
+    --color-primary-light: #916BEA;
+    --color-primary:#8257E5;
+    --color-primary-dark: #774DD6;
+    --color-primary-darker: #6842C2;
+    --color-secondary: #04D361;
+    --color-secondary-dark: #04BF58;
+    --color-title-in-primary: #FFFFFF;
+    --color-text-in-primary: #D4C2FF;
+    --color-text-title: #32264D;
+    --color-text-complement: #9C98AC;
+    --color-text-base: #6A6180;
+    --color-line-in-white: #ECECF0;
+    --color-input-background: #F8F8FC;
+    --color-button-text: #FFFFFF;
+    --color-box-base: #FFFFFF;
+    --color-box-footer: #FAFAFC;
+    --color-small-info: #C1BCCC;
+
+    /* tamanho da fonte padrão é 16px = 100%
+
+    1rem depende do tamanho da fonte configurado aqui em :root
+    */
+    font-size: 60%; /* controle das medidas rem*/
+
+    /* IMPORTANTE: % e rem são todos relativos, i.e, se um elemento pai tiver font-size de 16px, e um elemento filho tiver 50%, então o elemento filho terá font-size de 8px. O mesmo vale para rem (root element) e em (element, que faz referência ao elemento pai do elemento em questão).*/
+}
+
+/* O navegador já aplica um certo estilo ao nosso html, dessa maneira estamos forçando a todos elementos terem as configurações desejadas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100vh;
+}
+
+body {
+    background-color: var(--color-background);
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body, input, button, textarea {
+    /* font-weight, font-size e font-family*/
+    font: 500 1.6rem Poppins;
+    color: var(--color-text-base)
+}
+
+#container {
+    /* Divide a largura disponível em 90 pedacinhos */
+    width: 90vw; /* viewport width*/
+    
+    max-width: 700px; /* Limite máximo da caixa! */
+    /* border: 1px solid green; */
+}
+
+@media (min-width: 700px) {
+    :root {
+        font-size: 62.5%; /* equivale a 10 pixels*/
+    }
+}
